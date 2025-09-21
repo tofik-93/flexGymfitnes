@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Image from "next/image";
 import { Dumbbell, Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react"
 
 // Custom TikTok icon component since lucide-react doesn't have one
@@ -22,10 +23,17 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <Dumbbell className="h-8 w-8 text-primary" />
-              <span className="font-heading font-bold text-xl">Flex Gym and Fitness center</span>
-            </Link>
+          <Link href="/" className="flex items-center space-x-2">
+  <div className="relative h-8 w-8 rounded-lg overflow-hidden">
+    <Image 
+      src="/flex.jpeg" 
+      alt="Flex Gym Logo" 
+      fill
+      className="object-cover"
+    />
+  </div>
+  <span className="font-heading font-bold text-xl">Flex Gym and Fitness center</span>
+</Link>
             <p className="text-gray-400 text-sm text-pretty">
               Transform your body and mind at the premier fitness destination. Join our community of champions.
             </p>

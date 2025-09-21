@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image";
 import { Button } from "@/components/ui/button"
-import { Menu, X, Dumbbell } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,10 +25,15 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Dumbbell className="h-8 w-8 text-primary" />
-            <span className="font-heading font-bold text-xl text-foreground">Flex Gym and Fitness center</span>
-          </Link>
-
+  <Image 
+    src="/flex.jpeg" 
+    alt="Flex Gym Logo" 
+    width={32} 
+    height={32} 
+    className="h-8 w-8"
+  />
+  <span className="font-heading font-bold text-xl">Flex Gym and Fitness center</span>
+</Link>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
